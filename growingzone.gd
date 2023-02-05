@@ -20,13 +20,18 @@ func _on_Area2D_area_entered(area):
 			$plant.play("oniongrowing")
 		if plant == 3:
 			plantgrowing = true;
+			$corngrowtimer.start()
+			$plant.play("corngrowing")
+		if plant == 4:
+			plantgrowing = true;
 			$berrygrowtimer.start()
-			$plant.play("berry")
+			$plant.play("berrygrowing")
 	else:
 		print("Algo já está plantado nesse terreno!")
 
 func _on_carrotgrowtimer_timeout():
 	var carrot_plant = $plant
+	
 	if carrot_plant.frame == 0:
 		carrot_plant.frame = 1
 		$carrotgrowtimer.start()
@@ -43,16 +48,6 @@ func _on_oniongrowtimer_timeout():
 	elif onion_plant.frame == 1:
 		onion_plant.frame = 2
 		plant_grown = true
-
-func _on_Timer_timeout():
-	var berry_plant = $plant
-	
-	if berry_plant.frame == 0:
-		berry_plant.frame = 1
-		$berrygrowtimer.start()
-	elif berry_plant.frame == 1:
-		berry_plant.frame = 2
-		plant_grown = true
 		
 func _on_corngrowtimer_timeout():
 	var corn_plant = $plant
@@ -62,6 +57,16 @@ func _on_corngrowtimer_timeout():
 		$corngrowtimer.start()
 	elif corn_plant.frame == 1:
 		corn_plant.frame = 2
+		plant_grown = true
+
+func _on_berrygrowtimer_timeout():
+	var berry_plant = $plant
+	
+	if berry_plant.frame == 0:
+		berry_plant.frame = 1
+		$berrygrowtimer.start()
+	elif berry_plant.frame == 1:
+		berry_plant.frame = 2
 		plant_grown = true
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
@@ -74,6 +79,16 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 				$plant.play("none")
 			if plant == 2:
 				Global.numofonions += 1
+				plantgrowing = false
+				plant_grown = false
+				$plant.play("none")
+			if plant == 3:
+				Global.numofcorns += 1
+				plantgrowing = false
+				plant_grown = false
+				$plant.play("none")
+			if plant == 4:
+				Global.numofberrys += 1
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")

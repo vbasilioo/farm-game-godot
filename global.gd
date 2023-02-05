@@ -6,5 +6,7 @@ var plantselected = 1
 
 var numofcarrots = 0
 var numofonions = 0
+var numofcorns = 0
+var numofberrys = 0
 
 var coins = 1000

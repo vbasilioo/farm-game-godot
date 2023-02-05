@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var selected = false
-var seed_type = 4 #buy
+var seed_type = 4 
 
 func _ready():
 	$AnimatedSprite.play("default")

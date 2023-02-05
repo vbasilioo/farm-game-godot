@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://farmingTilesheetComplete.png" type="Texture" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://world.gd" type="Script" id=6]
 [ext_resource path="res://sellzone.tscn" type="PackedScene" id=7]
 [ext_resource path="res://shop.tscn" type="PackedScene" id=8]
+[ext_resource path="res://berry_seedpack.tscn" type="PackedScene" id=9]
+[ext_resource path="res://chicken.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "farmingTilesheetComplete.png 0"
@@ -787,3 +789,9 @@ position = Vector2( 528, 563 )
 
 [node name="shop" parent="." instance=ExtResource( 8 )]
 position = Vector2( 503, 508 )
+
+[node name="berry_seedpack" parent="." instance=ExtResource( 9 )]
+position = Vector2( 528, 517 )
+
+[node name="chicken" parent="." instance=ExtResource( 10 )]
+position = Vector2( 551, 473 )

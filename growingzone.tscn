@@ -140,5 +140,5 @@ wait_time = 20.0
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="timeout" from="oniongrowtimer" to="." method="_on_oniongrowtimer_timeout"]
 [connection signal="timeout" from="carrotgrowtimer" to="." method="_on_carrotgrowtimer_timeout"]
-[connection signal="timeout" from="berrygrowtimer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="berrygrowtimer" to="." method="_on_berrygrowtimer_timeout"]
 [connection signal="timeout" from="corngrowtimer" to="." method="_on_corngrowtimer_timeout"]
